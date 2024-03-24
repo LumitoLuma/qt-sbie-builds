@@ -21,3 +21,17 @@ jobs:
             path: |
                 qt-everywhere-src-5.15.13/*
             retention-days: 5
+
+      - name: Install Qt jom
+        run: .\install_jom.cmd
+      
+      - name: Build Qt x64
+        run: .\build_sources.cmd
+      
+      - name: Upload built Qt
+        uses: actions/upload-artifact@v4
+        with:
+          name: Qt patched source code (please download for [L]GPL compliance)
+          path: |
+              bin/*
+      
