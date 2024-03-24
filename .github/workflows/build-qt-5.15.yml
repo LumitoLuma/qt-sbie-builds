@@ -14,14 +14,6 @@ jobs:
       - name: Download Qt sources
         run: .\download_sources.cmd
 
-      - name: Upload patched sources (for [L]GPL compliance)
-        uses: actions/upload-artifact@v4
-        with:
-            name: Qt patched source code (please download for [L]GPL compliance)
-            path: |
-                qt-everywhere-src-5.15.13/*
-            retention-days: 5
-
       - name: Install Qt jom
         run: .\install_jom.cmd
       
@@ -34,4 +26,4 @@ jobs:
           name: Qt patched source code (please download for [L]GPL compliance)
           path: |
               bin/*
-      
+          compression-level: 9      
