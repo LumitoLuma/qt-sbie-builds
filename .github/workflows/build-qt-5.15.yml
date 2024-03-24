@@ -1,4 +1,4 @@
-name: Build Qt
+name: Build Qt 5.15
 
 on:
   workflow_dispatch:
@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download Qt sources
-        run: download_sources.cmd
+        run: .\download_sources.cmd
 
       - name: Upload patched sources (for [L]GPL compliance)
         uses: actions/upload-artifact@v4
