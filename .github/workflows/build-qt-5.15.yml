@@ -18,12 +18,36 @@ jobs:
         run: .\install_jom.cmd
       
       - name: Build Qt x64
-        run: .\build_sources.cmd
+        run: .\build_sources.cmd x64
       
       - name: Upload built Qt
         uses: actions/upload-artifact@v4
         with:
-          name: Qt patched source code (please download for [L]GPL compliance)
+          name: Qt 5.15.13 x64
           path: |
               bin/*
-          compression-level: 9      
+          compression-level: 9
+
+  Build_x86:
+    runs-on: windows-2019
+        
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Download Qt sources
+        run: .\download_sources.cmd
+        
+      - name: Install Qt jom
+        run: .\install_jom.cmd
+              
+      - name: Build Qt x64
+        run: .\build_sources.cmd Win32
+              
+      - name: Upload built Qt
+        uses: actions/upload-artifact@v4
+        with:
+          name: Qt 5.15.13 x86
+          path: |
+            bin/*
+          compression-level: 9
