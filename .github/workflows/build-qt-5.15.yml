@@ -12,13 +12,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download Qt sources
-        run: .\download_sources.cmd
+        run: cmd /c download_sources.cmd
 
       - name: Install Qt jom
-        run: .\install_jom.cmd
+        run: cmd /c install_jom.cmd
       
       - name: Build Qt x64
-        run: .\build_sources.cmd x64
+        run: cmd /c build_sources.cmd x64
       
       - name: Upload built Qt
         uses: actions/upload-artifact@v4
@@ -36,13 +36,13 @@ jobs:
         uses: actions/checkout@v4
         
       - name: Download Qt sources
-        run: .\download_sources.cmd
+        run: cmd /c download_sources.cmd
         
       - name: Install Qt jom
-        run: .\install_jom.cmd
+        run: cmd /c install_jom.cmd
               
       - name: Build Qt x64
-        run: .\build_sources.cmd Win32
+        run: cmd /c build_sources.cmd Win32
               
       - name: Upload built Qt
         uses: actions/upload-artifact@v4
