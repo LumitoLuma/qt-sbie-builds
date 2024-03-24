@@ -1,0 +1,23 @@
+name: Build Qt
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Build_x64:
+    runs-on: windows-2019
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download Qt sources
+        run: download_sources.cmd
+
+      - name: Upload patched sources (for [L]GPL compliance)
+        uses: actions/upload-artifact@v4
+        with:
+            name: Qt patched source code (please download for [L]GPL compliance)
+            path: |
+                qt-everywhere-src-5.15.13/*
+            retention-days: 5
