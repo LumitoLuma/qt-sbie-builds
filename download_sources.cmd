@@ -3,7 +3,7 @@ if exist %~dp0qt-everywhere-src-5.15.13\configure.bat goto done
 REM Downloading Qt 5.15.13 source code...
 curl -LsSO --output-dir %~dp0 https://download.qt.io/archive/qt/5.15/5.15.13/single/qt-everywhere-opensource-src-5.15.13.zip
 "C:\Program Files\7-Zip\7z.exe" x -aoa -o%~dp0 %~dp0qt-everywhere-opensource-src-5.15.13.zip
-ren %~dp0qt-everywhere-src-5.15.13 %~dp0src
+move %~dp0qt-everywhere-src-5.15.13 %~dp0src
 
 REM Downloading Qt 5.15.13 security patches...
 curl -LsSO --output-dir %~dp0src\qtsvg\ https://download.qt.io/archive/qt/5.15/CVE-2023-32573-qtsvg-5.15.diff
