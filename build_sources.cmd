@@ -6,7 +6,7 @@ if %1 == x64 (
     call configure.bat -release -opensource -confirm-license -prefix %~dp0bin\5.15.13\msvc2019_64 -platform win32-msvc -nomake tests -nomake examples -skip qtdoc -skip qtwebengine
     jom
     if %ERRORLEVEL% == 0 jom install
-    if %ERRORLEVEL% == 0 mkdir archive && "C:\Program Files\7-Zip\7z.exe" a -t7z -mx=9 -mfb=273 -ms -md=31 -myx=9 -mtm=- -mmt -mmtf -md=1536m -mmf=bt3 -mmc=10000 -mpb=0 -mlc=0 archive\qt-everywhere-5.15.13-Windows_10-MSVC2019-x86_64.7z bin\5.15.13
+    if %ERRORLEVEL% == 0 mkdir %~dp0archive && "C:\Program Files\7-Zip\7z.exe" a -t7z -mx=9 -mfb=273 -ms -md=31 -myx=9 -mtm=- -mmt -mmtf -md=1536m -mmf=bt3 -mmc=10000 -mpb=0 -mlc=0 %~dp0archive\qt-everywhere-5.15.13-Windows_10-MSVC2019-x86_64.7z %~dp0bin\5.15.13
 )
 
 if %1 == Win32 (
@@ -17,5 +17,5 @@ if %1 == Win32 (
     call configure.bat -release -opensource -confirm-license -prefix %~dp0bin\5.15.13\msvc2019 -platform win32-msvc -nomake tests -nomake examples -skip qtdoc -skip qtwebengine
     jom
     if %ERRORLEVEL% == 0 jom install
-    if %ERRORLEVEL% == 0 mkdir archive && "C:\Program Files\7-Zip\7z.exe" a -t7z -mx=9 -mfb=273 -ms -md=31 -myx=9 -mtm=- -mmt -mmtf -md=1536m -mmf=bt3 -mmc=10000 -mpb=0 -mlc=0 archive\qt-everywhere-5.15.13-Windows_10-MSVC2019-x86.7z bin\5.15.13
+    if %ERRORLEVEL% == 0 mkdir %~dp0archive && "C:\Program Files\7-Zip\7z.exe" a -t7z -mx=9 -mfb=273 -ms -md=31 -myx=9 -mtm=- -mmt -mmtf -md=1536m -mmf=bt3 -mmc=10000 -mpb=0 -mlc=0 %~dp0archive\qt-everywhere-5.15.13-Windows_10-MSVC2019-x86.7z %~dp0bin\5.15.13
 )
