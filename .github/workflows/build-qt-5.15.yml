@@ -25,7 +25,7 @@ jobs:
         with:
           name: Qt 5.15.13 x64
           path: |
-              bin/*
+            archive/*
           compression-level: 9
 
   Build_x86:
@@ -49,5 +49,5 @@ jobs:
         with:
           name: Qt 5.15.13 x86
           path: |
-            bin/*
+            archive/*
           compression-level: 9
