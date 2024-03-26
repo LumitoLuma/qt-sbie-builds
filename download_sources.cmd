@@ -38,7 +38,7 @@ pushd %~dp0src\qtsvg\
 patch -p1 -i CVE-2023-32573-qtsvg-5.15.diff
 popd
 
-if %1 == repack_sources (
+if %1 == repack (
     REM Pack patched Qt sources...
     mkdir %~dp0src_archive && "C:\Program Files\7-Zip\7z.exe" a -t7z -mx=9 -mfb=273 -ms -md=31 -myx=9 -mtm=- -mmt -mmtf -md=1536m -mmf=bt3 -mmc=10000 -mpb=0 -mlc=0 %~dp0src_archive\qt-everywhere-opensource-src-5.15.13-patched.7z %~dp0src
 )

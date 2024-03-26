@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download Qt sources
-        run: .\download_sources.cmd repack_sources
+        run: .\download_sources.cmd repack
       
       - name: Upload patched Qt sources
         uses: actions/upload-artifact@v4
@@ -45,7 +45,7 @@ jobs:
         uses: actions/checkout@v4
         
       - name: Download Qt sources
-        run: .\download_sources.cmd
+        run: .\download_sources.cmd no_repack
         
       - name: Install Qt jom
         run: .\install_jom.cmd
