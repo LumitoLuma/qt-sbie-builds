@@ -12,7 +12,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download Qt sources
-        run: .\download_sources.cmd
+        run: .\download_sources.cmd repack_sources
+      
+      - name: Upload patched Qt sources
+        uses: actions/upload-artifact@v4
+        with:
+          name: Qt 5.15.13 patched src
+          path: |
+            src_archive/*
+          compression-level: 9
+          retention-days: 5
 
       - name: Install Qt jom
         run: .\install_jom.cmd
