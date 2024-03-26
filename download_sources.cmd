@@ -40,7 +40,7 @@ popd
 
 if %1 == repack (
     REM Pack patched Qt sources...
-    mkdir %~dp0src_archive && "C:\Program Files\7-Zip\7z.exe" a -mm=Deflate -mfb=258 -mpass=15 -r src_archive/qt-everywhere-opensource-src-5.15.13-patched.zip %~dp0src
+    mkdir %~dp0src_archive && tar -cvf src_archive/qt-everywhere-opensource-src-5.15.13-patched.tar %~dp0src
 )
 
 :done
