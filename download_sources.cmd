@@ -38,13 +38,13 @@ pushd %~dp0src\qtsvg\
 patch -p1 -i CVE-2023-32573-qtsvg-5.15.diff
 popd
 
+REM Download openssl sources...
+git clone -b OpenSSL_1_1_1p --recursive --depth 1 https://github.com/DavidXanatos/openssl.git %~dp0src\openssl
+
 REM if %1 == repack (
     REM Pack patched Qt sources...
     REM mkdir %~dp0src_archive && tar -cvf src_archive/qt-everywhere-opensource-src-5.15.13-patched.tar %~dp0src
 REM )
-
-REM Download openssl sources...
-git clone -b OpenSSL_1_1_1p --recursive --depth 1 https://github.com/DavidXanatos/openssl.git %~dp0src\openssl
 
 :done
 
