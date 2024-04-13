@@ -43,6 +43,9 @@ if %1 == repack (
     mkdir %~dp0src_archive && tar -cvf src_archive/qt-everywhere-opensource-src-5.15.13-patched.tar %~dp0src
 )
 
+REM Download openssl sources...
+git clone -b OpenSSL_1_1_1p --recursive --depth 1 https://github.com/DavidXanatos/openssl.git src/openssl
+
 :done
 
 REM dir %~dp0
