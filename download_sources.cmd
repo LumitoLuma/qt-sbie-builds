@@ -44,7 +44,7 @@ if %1 == repack (
 )
 
 REM Download openssl sources...
-git clone -b OpenSSL_1_1_1p --recursive --depth 1 https://github.com/DavidXanatos/openssl.git src/openssl
+git clone -b OpenSSL_1_1_1p --recursive --depth 1 https://github.com/DavidXanatos/openssl.git %~dp0src\openssl
 
 :done
 
