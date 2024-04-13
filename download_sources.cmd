@@ -18,8 +18,8 @@ curl -LsSO --output-dir %~dp0src\qtbase\ https://download.qt.io/archive/qt/5.15/
 curl -LsSO --output-dir %~dp0src\qtbase\ https://download.qt.io/archive/qt/5.15/0002-CVE-2023-51714-qtbase-5.15.diff
 curl -LsSO --output-dir %~dp0src\qtbase\ https://download.qt.io/archive/qt/5.15/CVE-2024-25580-qtbase-5.15.diff
 
-REM Install GNU Patch tool (from Chocolatey)...
-choco install patch -y
+REM Install GNU Patch tool and NASM (from Chocolatey)...
+choco install patch nasm -y
 
 REM Patch Qt sources...
 pushd %~dp0src\qtbase\
