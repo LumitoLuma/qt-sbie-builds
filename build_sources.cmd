@@ -3,7 +3,7 @@ if %1 == x64 (
     set "PATH=%~dp0src\qtbase\bin;%~dp0src\gnuwin32\bin;%~dp0jom;%PATH%"
     call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
     pushd %~dp0src\openssl\
-    perl Configure shared no-nasm --prefix=%~dp0openssl-win64 VC-WIN64A
+    perl Configure shared no-asm --prefix=%~dp0openssl-win64 VC-WIN64A
     jom
     jom install
     popd
@@ -19,7 +19,7 @@ if %1 == Win32 (
     set "PATH=%~dp0src\qtbase\bin;%~dp0src\gnuwin32\bin;%~dp0jom;%PATH%"
     call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsamd64_x86.bat"
 pushd %~dp0src\openssl\
-    perl Configure shared no-nasm --prefix=%~dp0openssl-win32 VC-WIN64A
+    perl Configure shared no-asm --prefix=%~dp0openssl-win32 VC-WIN64A
     jom
     jom install
     popd
