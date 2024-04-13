@@ -50,7 +50,7 @@ jobs:
       - name: Install Qt jom
         run: .\install_jom.cmd
               
-      - name: Build Qt x64
+      - name: Build Qt x86
         run: .\build_sources.cmd Win32
               
       - name: Upload built Qt

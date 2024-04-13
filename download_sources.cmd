@@ -41,10 +41,10 @@ popd
 REM Download openssl sources...
 git clone -b OpenSSL_1_1_1p --recursive --depth 1 https://github.com/DavidXanatos/openssl.git %~dp0src\openssl
 
-REM if %1 == repack (
+if %1 == repack (
     REM Pack patched Qt sources...
-    REM mkdir %~dp0src_archive && tar -cf src_archive/qt-everywhere-opensource-src-5.15.13-patched.tar %~dp0src
-REM )
+    mkdir %~dp0src_archive && tar -cf src_archive/qt-everywhere-opensource-src-5.15.13-patched-openssl.tar %~dp0src
+)
 
 :done
 
