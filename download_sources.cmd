@@ -18,8 +18,8 @@ curl -LsSO --output-dir %~dp0src\qtbase\ https://download.qt.io/archive/qt/5.15/
 curl -LsSO --output-dir %~dp0src\qtbase\ https://download.qt.io/archive/qt/5.15/0002-CVE-2023-51714-qtbase-5.15.diff
 curl -LsSO --output-dir %~dp0src\qtbase\ https://download.qt.io/archive/qt/5.15/CVE-2024-25580-qtbase-5.15.diff
 
-REM Install GNU Patch tool and NASM (from Chocolatey)...
-choco install patch nasm -y
+REM Install GNU Patch tool (from Chocolatey)...
+choco install patch -y
 
 REM Patch Qt sources...
 pushd %~dp0src\qtbase\
@@ -43,7 +43,7 @@ git clone -b OpenSSL_1_1_1p --recursive --depth 1 https://github.com/DavidXanato
 
 REM if %1 == repack (
     REM Pack patched Qt sources...
-    REM mkdir %~dp0src_archive && tar -cvf src_archive/qt-everywhere-opensource-src-5.15.13-patched.tar %~dp0src
+    REM mkdir %~dp0src_archive && tar -cf src_archive/qt-everywhere-opensource-src-5.15.13-patched.tar %~dp0src
 REM )
 
 :done
