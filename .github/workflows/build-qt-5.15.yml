@@ -17,7 +17,7 @@ jobs:
       - name: Upload patched Qt sources
         uses: actions/upload-artifact@v4
         with:
-          name: Qt 5.15.13 patched src
+          name: Qt 5.15.14 patched src
           path: |
             src_archive/*
           compression-level: 9
@@ -32,7 +32,7 @@ jobs:
       - name: Upload built Qt
         uses: actions/upload-artifact@v4
         with:
-          name: Qt 5.15.13 x64
+          name: Qt 5.15.14 x64
           path: |
             archive/*
           compression-level: 9
@@ -56,7 +56,7 @@ jobs:
       - name: Upload built Qt
         uses: actions/upload-artifact@v4
         with:
-          name: Qt 5.15.13 x86
+          name: Qt 5.15.14 x86
           path: |
             archive/*
           compression-level: 9
