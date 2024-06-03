@@ -1,7 +1,8 @@
-set "qt_version=5.15.14"
+echo %*
+set "qt_version=%2"
 set "qt_source_url=https://download.qt.io/archive/qt/5.15/%qt_version%/single/qt-everywhere-opensource-src-%qt_version%.zip"
 set "qt_patch_url=https://download.qt.io/archive/qt/5.15"
-set "openssl_version=3.3.0"
+set "openssl_version=%3"
 set "openssl_source_url=https://github.com/openssl/openssl/releases/download/openssl-%openssl_version%/openssl-%openssl_version%.tar.gz"
 set "bDir=%~dp0"
 set "bDir=%bDir:~0,-1%"
