@@ -55,6 +55,7 @@ curl -LsSO --output-dir "%bDir%\src\qtnetworkauth" "%qt_patch_url%/CVE-2024-3604
 curl -LsSO --output-dir "%bDir%\src\qtbase" "%qt_patch_url%/CVE-2024-39936-qtbase-5.15.patch"
 :verMin18
 :verMin19
+curl -LsSO --output-dir "%bDir%\src\qtconnectivity" "%qt_patch_url%/CVE-2025-23050-qtconnectivity-5.15.diff"
 
 
 REM Install GNU Patch tool (from Chocolatey)...
