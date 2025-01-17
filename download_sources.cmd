@@ -117,6 +117,19 @@ for %%i in (%qtnetworkauth_patches%) do (
 )
 popd
 
+pushd "%bDir%\src\qtconnectivity"
+set qtconnectivity_patches="CVE-2025-23050-qtconnectivity-5.15.diff"
+for %%i in (%qtconnectivity_patches%) do (
+    if exist "%%i" (
+        echo Applying patch "%%i"
+        %EOLconverter% --verbose "%%i"
+        patch -p1 --verbose -u -i "%%i"
+    ) else (
+        echo File "%%i" does not exist. Skipping...
+    )
+)
+popd
+
 REM Download openssl sources...
 curl -LsSO --output-dir "%bDir%" "%openssl_source_url%"
 tar -xzf "openssl-%openssl_version%.tar.gz"
