@@ -20,7 +20,7 @@ if exist "%bDir%\qt-everywhere-src-%qt_version%\configure.bat" goto done
 REM Downloading Qt 6 source code...
 echo Downloading Qt %qt_version% source code...
 curl -LsSO --output-dir "%bDir%" "%qt_source_url%"
-"C:\Program Files\7-Zip\7z.exe" x -aoa -o"%bDir%" "%bDir%\qt-everywhere-opensource-src-%qt_version%.zip"
+"C:\Program Files\7-Zip\7z.exe" x -aoa -o"%bDir%" "%bDir%\qt-everywhere-src-%qt_version%.zip"
 move "%bDir%\qt-everywhere-src-%qt_version%" "%bDir%\src"
 
 REM Downloading Qt 6 patches for Win7
@@ -96,7 +96,7 @@ move "%bDir%\openssl-%openssl_version%" "%bDir%\src\openssl"
 
 if "%1" == "repack" (
     REM Pack patched Qt sources...
-    mkdir "%bDir%\src_archive" && tar -cf "src_archive/qt-everywhere-opensource-src-%qt_version%-patched-openssl.tar" "%bDir%\src"
+    mkdir "%bDir%\src_archive" && tar -cf "src_archive/qt-everywhere-src-%qt_version%-patched-openssl.tar" "%bDir%\src"
 )
 
 :done
