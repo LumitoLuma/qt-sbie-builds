@@ -14,6 +14,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
+        
+      - name: Enable Developer Command Prompt
+        uses: ilammy/msvc-dev-cmd@v1
 
       - name: Download Qt ${{ env.qt_version }} sources
         run: .\download_sources.cmd repack ${{ env.qt_version }} ${{ env.openssl_version }}
@@ -57,6 +60,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
+
+      - name: Enable Developer Command Prompt
+        uses: ilammy/msvc-dev-cmd@v1
 
       - name: Download Qt ${{ env.qt_version }} sources
         run: .\download_sources.cmd no_repack ${{ env.qt_version }} ${{ env.openssl_version }}
