@@ -1,25 +1,25 @@
-name: Build Qt 5.15
+name: Build Qt 6.8
 
 on:
   workflow_dispatch:
 
 env:
-  qt_version: 5.15.17
-  openssl_version: 3.4.1
+  qt_version: 6.8.3
+  openssl_version: 3.0.17
 
 jobs:
   Build_x64:
-    runs-on: windows-2019
+    runs-on: windows-2022
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5
 
       - name: Download Qt ${{ env.qt_version }} sources
         run: .\download_sources.cmd repack ${{ env.qt_version }} ${{ env.openssl_version }}
 
       - name: Upload patched Qt ${{ env.qt_version }} sources
-        uses: actions/upload-artifact@v4.4.3
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: Qt ${{ env.qt_version }} patched src
           path: |
@@ -34,7 +34,7 @@ jobs:
         run: .\build_sources.cmd x64 ${{ env.qt_version }}
 
       - name: Upload built Qt ${{ env.qt_version }}
-        uses: actions/upload-artifact@v4.4.3
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: Qt ${{ env.qt_version }} x64
           path: |
@@ -52,11 +52,11 @@ jobs:
           compression-level: 9
 
   Build_x86:
-    runs-on: windows-2019
+    runs-on: windows-2022
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5
 
       - name: Download Qt ${{ env.qt_version }} sources
         run: .\download_sources.cmd no_repack ${{ env.qt_version }} ${{ env.openssl_version }}
@@ -68,7 +68,7 @@ jobs:
         run: .\build_sources.cmd Win32 ${{ env.qt_version }}
 
       - name: Upload built Qt
-        uses: actions/upload-artifact@v4.4.3
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: Qt ${{ env.qt_version }} x86
           path: |
@@ -76,7 +76,7 @@ jobs:
           compression-level: 0
 
       - name: Upload built OpenSSL ${{ env.openssl_version }}
-        uses: actions/upload-artifact@v4.4.3
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: OpenSSL ${{ env.qt_version }} x86
           path: |
