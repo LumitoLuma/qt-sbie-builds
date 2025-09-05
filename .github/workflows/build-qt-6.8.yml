@@ -5,7 +5,7 @@ on:
 
 env:
   qt_version: 6.8.3
-  openssl_version: 3.0.17
+  openssl_version: 3.5.2
 
 jobs:
   Build_x64:
